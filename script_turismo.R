@@ -13,3 +13,15 @@ dados$estabelecimento = factor(dados$estabelecimento, levels = c("P","H"),labels
 round(prop.table(table(dados$sexo)) * 100, 2)
 round(prop.table(table(dados$estabelecimento)) * 100, 2)
 round(prop.table(table(dados$sexo, dados$estabelecimento), margin = 2) * 100, 2)
+
+# Medidas descritivas para as variáveis duração e valor
+quantile(dados$duracao, c(0.25, 0.50, 0.75))
+mean(dados$duracao)
+sd(dados$duracao)
+
+dados$valor[dados$valor == "" | dados$valor == ""] = NA
+dados$valor = as.numeric(dados$valor)
+quantile(dados$valor, c(0.25, 0.50, 0.75),na.rm = T)
+mean(dados$valor, na.rm = T)
+sd(dados$valor, na.rm = T)
+
