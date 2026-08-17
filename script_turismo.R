@@ -24,4 +24,3 @@ dados$valor = as.numeric(dados$valor)
 quantile(dados$valor, c(0.25, 0.50, 0.75),na.rm = T)
 mean(dados$valor, na.rm = T)
 sd(dados$valor, na.rm = T)
-
